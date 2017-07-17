@@ -36,21 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(getApplicationContext());
         // создаем базу данных
-        databaseHelper.create_db();
 
 
 
-        productList = (GridView) findViewById(R.id.productList);
-
-
-
-
-
-
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
         // открываем подключение
 
         db = databaseHelper.open();
@@ -70,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             String dengi_start=userCursor.getString(userCursor.getColumnIndex("dengi_start"));
             String dengi_fakt=userCursor.getString(userCursor.getColumnIndex("dengi_fakt"));
 
-           products.add(new Product(id, nazvanie, dengi_start, dengi_fakt));
+            products.add(new Product(id, nazvanie, dengi_start, dengi_fakt));
             userCursor.moveToNext();
         }
 
@@ -104,6 +92,20 @@ public class MainActivity extends AppCompatActivity {
         userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
                 userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
         userList.setAdapter(userAdapter);
+
+
+
+
+
+
+
+
+
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+
 
     }
     // по нажатию на кнопку запускаем UserActivity для добавления данных
