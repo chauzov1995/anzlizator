@@ -37,10 +37,9 @@ public class MainActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(getApplicationContext());
         // создаем базу данных
 
-
+        databaseHelper.create_db();//копируем базу
 
         // открываем подключение
-
         db = databaseHelper.open();
 
 
