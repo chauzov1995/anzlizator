@@ -68,10 +68,19 @@ public class add_koch extends AppCompatActivity {
         db = sqlHelper.open();
 
         ContentValues cv = new ContentValues();
+
+        cv.put("id_clienta", "1");
         cv.put("otkuda", otkuda);
         cv.put("kuda", kuda);
         cv.put("summa", editText3.getText().toString());
         cv.put("komment", editText2.getText().toString());
+        cv.put("data_fakt", "0");
+        cv.put("data", "0");
+        cv.put("visible", "0");
+
+
+
+
 
 
             db.insert("chto_kuda", null, cv);

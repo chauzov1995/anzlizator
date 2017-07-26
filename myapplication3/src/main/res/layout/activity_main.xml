@@ -3,12 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Добавить"
-        android:onClick="add"
-        android:textSize="18dp"/>
+
 
 
     <TextView
@@ -17,19 +12,58 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 
-    <GridView
-        android:columnWidth="100dp"
-        android:id="@+id/productList"
+
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="auto_fit"
-        android:scrollbars="horizontal"/>
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+            <GridView
+                android:id="@+id/productList"
+                android:layout_width="5650dp"
+                android:layout_height="wrap_content"
+                android:columnWidth="70dp"
+                android:numColumns="auto_fit"
+                />
+
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal" >
+
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Button" />
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Button" />
+
+
+
+        </RelativeLayout>
+    </HorizontalScrollView>
 
 
 

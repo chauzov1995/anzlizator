@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
             String dengi_start=userCursor.getString(userCursor.getColumnIndex("dengi_start"));
             String dengi_fakt=userCursor.getString(userCursor.getColumnIndex("dengi_fakt"));
 
-            products.add(new Product(id, nazvanie, dengi_start, dengi_fakt));
+            products.add(new Product(id, nazvanie, dengi_start, dengi_fakt, "1"));
             userCursor.moveToNext();
         }
 
-
+        products.add(new Product("new", "Добавить", null, null,"1"));
 
 
         productList = (GridView) findViewById(R.id.productList);
@@ -73,24 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        userList = (ListView)findViewById(R.id.list);
 
-        userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), UserActivity.class);
-                intent.putExtra("id", id);
-                startActivity(intent);
-            }
-        });
-
-
-
-        String[] headers = new String[] {"nazvanie", "type"};
-        // создаем адаптер, передаем в него курсор
-        userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
-                userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
-        userList.setAdapter(userAdapter);
 
 
 

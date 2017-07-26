@@ -16,6 +16,7 @@
         <activity android:name=".UserActivity" ></activity>
         <activity android:name=".add_koch" android:label="Заполнить"></activity>
         <activity android:name=".histor" android:label="История операций"></activity>
+        <activity android:name=".new_koch" android:label="Новый кошелёк"></activity>
     </application>
 
 </manifest>

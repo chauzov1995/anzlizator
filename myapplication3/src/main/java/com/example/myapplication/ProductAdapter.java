@@ -198,11 +198,16 @@ String otvet=event.getClipData().getItemAt(0).getText().toString()
             @Override
             public void onClick(View v) {
 
-
+                if(objects.get(position).id.toString()=="new"){
+                    Intent intent = new Intent(MAIN, new_koch.class);
+                    intent.putExtra("type", objects.get(position).type.toString());
+                   MAIN.startActivity(intent);
+                }else {
 
                 Intent intent = new Intent(MAIN, histor.class);
-                intent.putExtra("id", objects.get(position).id.toString());
-                MAIN.startActivity(intent);
+                                   intent.putExtra("id", objects.get(position).id.toString());
+                               MAIN.startActivity(intent);
+                }
             }
         });
 

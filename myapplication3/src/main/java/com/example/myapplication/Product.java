@@ -6,15 +6,16 @@ public class Product {
     public String nazv;
     public String start;
     public String fakt;
+    public String type;
 
 
 
-
-    Product(String id, String nazv, String start, String fakt){
+    Product(String id, String nazv, String start, String fakt, String type){
         this.id = id;
         this.nazv = nazv;
         this.start = start;
         this.fakt = fakt;
+        this.type = type;
     }
 
     public String getId(){
@@ -28,6 +29,9 @@ public class Product {
     }
     public String getFakt(){
         return this.fakt;
+    }
+    public String getType(){
+        return this.type;
     }
 }
 
